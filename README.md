@@ -1,0 +1,1 @@
+# moreStrikey.lv
