@@ -1,0 +1,108 @@
+:root{
+  --bg: #ffffff;
+  --text: #222;
+  --muted: #555;
+  --accent: #0b6cff;
+  --card: #fafafa;
+  --radius: 10px;
+  --max-width: 1100px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  box-sizing: border-box;
+}
+*{box-sizing:inherit}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+
+.container{max-width:var(--max-width);margin:0 auto;padding:0 20px;}
+
+.site-header{
+  border-bottom:1px solid #eee;
+  background:var(--bg);
+  position:sticky;top:0;z-index:60;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.logo{font-weight:700;color:var(--text);text-decoration:none;font-size:1.05rem;}
+.logo .dot{color:var(--accent);margin-left:4px;font-weight:800}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.nav a:hover{color:var(--text)}
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+
+/* Hero */
+.hero{padding:56px 0;background:linear-gradient(180deg,rgba(250,250,250,1),#fff);}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:30px;align-items:center}
+.hero h1{font-size:2.1rem;margin:0 0 6px;font-weight:700}
+.subtitle{font-size:1.05rem;color:var(--muted);margin-bottom:10px}
+.cta-note{color:var(--muted);margin-bottom:18px}
+.hero-cta .btn{margin-right:10px}
+
+.image-placeholder{
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,#f7f9ff,#ffffff);
+  border:1px solid #f0f4ff;
+  min-height:220px;display:flex;align-items:center;justify-content:center;color:var(--muted);
+  box-shadow:0 6px 18px rgba(15,30,60,0.04);
+  padding:20px;text-align:center;font-size:0.95rem;
+}
+
+/* Sections */
+.section{padding:56px 0}
+.section h2{margin:0 0 10px;font-size:1.4rem}
+.lead{color:var(--muted);margin-bottom:18px}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.about-grid h3{margin:0 0 6px}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+.card{background:var(--card);padding:18px;border-radius:10px;border:1px solid #f0f0f0;box-shadow:0 6px 14px rgba(12,32,80,0.03)}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:8px;display:block}
+.gallery-grid figure{margin:0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:26px;align-items:start}
+.contact-list{list-style:none;padding:0;margin:12px 0 0;color:var(--muted)}
+.contact-list li{margin-bottom:8px}
+.form label{display:block;margin-bottom:12px;font-weight:600;font-size:0.9rem}
+.form input,.form textarea{width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:8px;font-size:1rem}
+.form .form-actions{display:flex;gap:10px;align-items:center;margin-top:8px}
+.small-note{color:var(--muted);font-size:.9rem;margin-top:10px}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:9px;text-decoration:none;font-weight:700;border:1px solid transparent}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid #ddd;color:var(--text)}
+
+/* Footer */
+.site-footer{border-top:1px solid #eee;padding:18px 0;margin-top:36px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{margin-left:12px;color:var(--muted);text-decoration:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .nav-toggle{display:block}
+}
+@media (max-width:600px){
+  .about-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.6rem}
+  .footer-inner{flex-direction:column;gap:8px}
+}
